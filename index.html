@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; frame-ancestors 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <title>Simple Counter App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Simple Counter</h1>
+    <div class="counter-display" id="counterDisplay" aria-live="polite" aria-label="Counter value">
+      0
+    </div>
+    <div class="step-control">
+      <label for="stepInput">Step size:</label>
+      <input
+        type="number"
+        id="stepInput"
+        value="1"
+        min="1"
+        max="100"
+        aria-label="Step size for increment and decrement"
+      />
+    </div>
+    <div class="buttons">
+      <button id="decrementBtn" aria-label="Decrement counter">&#8722; Decrement</button>
+      <button id="resetBtn" aria-label="Reset counter to zero">&#8635; Reset</button>
+      <button id="incrementBtn" aria-label="Increment counter">&#43; Increment</button>
+    </div>
+    <div class="history">
+      <h2>History</h2>
+      <ul id="historyList" aria-label="Counter history" role="log">
+      </ul>
+      <button id="clearHistoryBtn" aria-label="Clear history">Clear History</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
