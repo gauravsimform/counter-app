@@ -19,6 +19,7 @@
     </div>
     <div class="step-control">
       <label for="stepInput">Step size:</label>
+      <button id="stepDecrBtn" aria-label="Decrease step size">&#8722;</button>
       <input
         type="number"
         id="stepInput"
@@ -27,11 +28,14 @@
         max="100"
         aria-label="Step size for increment and decrement"
       />
+      <button id="stepIncrBtn" aria-label="Increase step size">&#43;</button>
     </div>
     <div class="buttons">
       <button id="decrementBtn" aria-label="Decrement counter">&#8722; Decrement</button>
-      <button id="resetBtn" aria-label="Reset counter to zero">&#8635; Reset</button>
       <button id="incrementBtn" aria-label="Increment counter">&#43; Increment</button>
+    </div>
+    <div class="buttons">
+      <button id="resetBtn" aria-label="Reset counter to zero">&#8635; Reset</button>
     </div>
     <div class="history">
       <h2>History</h2>

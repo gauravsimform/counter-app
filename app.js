@@ -20,6 +20,8 @@
   const resetBtn = document.getElementById('resetBtn');
   const historyList = document.getElementById('historyList');
   const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+  const stepDecrBtn = document.getElementById('stepDecrBtn');
+  const stepIncrBtn = document.getElementById('stepIncrBtn');
 
   /**
    * Returns the current step value, clamped to [MIN_STEP, MAX_STEP].
@@ -48,7 +50,7 @@
    */
   function addHistory(action) {
     const timestamp = new Date().toLocaleTimeString();
-    const entry = `[${timestamp}] ${action} → ${count}`;
+    const entry = `[${timestamp}] ${action} \u2192 ${count}`;
     history.unshift(entry);
     if (history.length > MAX_HISTORY) history.pop();
     renderHistory();
@@ -90,6 +92,16 @@
   clearHistoryBtn.addEventListener('click', function () {
     history.length = 0;
     renderHistory();
+  });
+
+  stepDecrBtn.addEventListener('click', function () {
+    const current = getStep();
+    if (current > MIN_STEP) stepInput.value = current - 1;
+  });
+
+  stepIncrBtn.addEventListener('click', function () {
+    const current = getStep();
+    if (current < MAX_STEP) stepInput.value = current + 1;
   });
 
   // Clamp step input on change
