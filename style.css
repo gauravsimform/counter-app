@@ -66,8 +66,8 @@ h1 {
 }
 
 .step-control input {
-  width: 70px;
-  padding: 0.4rem 0.6rem;
+  width: 55px;
+  padding: 0.4rem 0.4rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -76,10 +76,38 @@ h1 {
   text-align: center;
   outline: none;
   transition: border-color 0.2s;
+  -moz-appearance: textfield;
+}
+
+.step-control input::-webkit-outer-spin-button,
+.step-control input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .step-control input:focus {
   border-color: #e94560;
+}
+
+#stepDecrBtn,
+#stepIncrBtn {
+  padding: 0.35rem 0.7rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: none;
+}
+
+#stepDecrBtn:hover,
+#stepIncrBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
 }
 
 .buttons {
